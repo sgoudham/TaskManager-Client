@@ -1,0 +1,17 @@
+<div class="centered-content">
+  <div class="modal-box">
+    <h1 class="title has-text-white">
+      Create New Task
+    </h1>
+
+    <input #taskTitleInput class="input is-medium" type="text" placeholder="Wash The Dishes..." autofocus>
+
+    <br> <br>
+
+    <div class="buttons is-right">
+      <button class="red is-medium has-text-white" routerLink="/">Cancel</button> 
+      <button class="green is-medium has-text-white" (click)="createNewTask(taskTitleInput.value)">Create</button> 
+    </div>
+
+  </div>
+</div>

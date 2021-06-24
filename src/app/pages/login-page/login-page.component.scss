@@ -1,0 +1,37 @@
+@import '../../../main-styles.scss';
+
+.login-box {
+    min-height: 200px;
+    width: 100%;
+    max-width: 580px;
+    background-color: #060930;
+    border-radius: 5px;
+    padding: 35px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: $dark-blue;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 24px;
+    margin: 5px;
+
+    &:hover {
+        transform: scale(0.90);
+    }
+}
+
+.green {
+    &:hover {
+        box-shadow: 2px 4px rgb(10, 156, 18);
+    }
+}
+
+.red {
+    &:hover {
+        box-shadow: 2px 4px rgb(182, 2, 2);
+    }
+}

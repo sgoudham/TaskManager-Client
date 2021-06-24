@@ -1,0 +1,156 @@
+@import '../../../main-styles.scss';
+
+.task-manager-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 680px;
+}
+
+.task-list-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 42px;
+    background: #0d1699;
+
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.task {
+    background: #060930;
+    padding: 15px 20px;
+    border-radius: 2px;
+    margin-top: 10px;
+    cursor: pointer;
+    animation: 0.25s ease 0s 1 slideInFromTop;
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-15%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    &:not(.completed) {
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        &:hover {
+            box-shadow: 3px 4px rgb(182, 2, 2);
+        }
+    }
+
+    &.completed {
+        text-decoration: line-through;
+        text-decoration-color: black;
+        opacity: 70%;
+        font-style: italic;
+
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+.list-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    flex-grow: 1; 
+
+    .list-menu-item {
+        display: flex;
+        padding: 12px 15px;
+        border-radius: 5px;
+        text-align: center;
+
+        width: 100%;
+        margin-bottom: 5px;
+        transition: box-shadow 0.25s ease;
+
+        &:hover {
+            box-shadow: 3px 4px rgb(10, 156, 18);
+            // box-shadow: inset 2px 5px 0 0 #10689b, 2px 5px 0 0 #1674aa;
+        }
+
+        &.is-active {
+            box-shadow: 3px 4px rgb(182, 2, 2);
+            // box-shadow: inset 2px 5px 0 0 rgb(10, 156, 18), 2px 5px 0 0 rgb(10, 156, 18);
+        }
+    }
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    min-width: 250px;
+    background: #060930;
+
+    padding: 42px;
+
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    .button {
+        background-color: $dark-blue;
+        border: none;
+        color: white;
+        
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 3px 4px rgb(10, 156, 18);
+            transform: scale(0.90)
+        }
+    }
+}
+
+.circle-add-button {
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    height: 50px;
+    width: 50px;
+    background: $dark-blue;
+    border: none;
+    border-radius: 65%;
+
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        box-shadow: 3px 4px rgb(10, 156, 18);
+        transform: scale(0.90);
+    }
+}
+
+.empty-state-text {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 25px;
+
+    animation: 0.25s ease 0s 1 slideInFromTop;
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-15%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
